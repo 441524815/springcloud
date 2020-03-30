@@ -1,0 +1,125 @@
+############################################################
+#
+# web访问端口号  约定：8088
+#
+############################################################
+server:
+  port: 10001
+logging:
+  level:
+    io:
+      seata: info
+############################################################
+#
+# 配置数据源信息
+#
+############################################################
+spring:
+  ### 推送变更的时候用
+  rabbitmq:
+    host: 47.104.96.77
+    port: 5672
+    username: guest
+    password: guest
+  main:
+    allow-bean-definition-overriding: false
+  application:
+    name: item-service
+  cloud:
+    alibaba:
+      seata:
+        tx-service-group: zz_tx_group
+  thymeleaf:
+    cache: true
+#  redis:
+#    # Redis 单机单实例
+#    database: 1
+#    host: 47.104.96.77
+#    port: 6379
+#    password: 123456
+  profiles:
+    active: dev
+  datasource:                                           # 数据源的相关配置
+    type: com.zaxxer.hikari.HikariDataSource          # 数据源类型：HikariCP
+    driver-class-name: com.mysql.cj.jdbc.Driver      # mysql驱动
+    url: ${mariadb.url}
+    username: ${mariadb.username}
+    password: ${mariadb.password}
+
+    hikari:
+      connection-timeout: 30000       # 等待连接池分配连接的最大时长（毫秒），超过这个时长还没可用的连接则发生SQLException， 默认:30秒
+      minimum-idle: 5                 # 最小连接数
+      maximum-pool-size: 20           # 最大连接数
+      auto-commit: true               # 自动提交
+      idle-timeout: 600000            # 连接超时的最大时长（毫秒），超时则被释放（retired），默认:10分钟
+      pool-name: DateSourceHikariCP     # 连接池名字
+      max-lifetime: 1800000           # 连接的生命时长（毫秒），超时而且没被使用则被释放（retired），默认:30分钟 1800000ms
+      connection-test-query: SELECT 1
+  servlet:
+    multipart:
+      max-file-size: 512000     # 文件上传大小限制为500kb
+      max-request-size: 512000  # 请求大小限制为500kb
+  aop:
+    auto: true
+############################################################
+#
+# mybatis 配置
+#
+############################################################
+mybatis:
+  type-aliases-package: com.zz.item.pojo          # 所有POJO类所在包路径
+  mapper-locations: classpath:mapper/*Mapper.xml      # mapper映射文件
+
+############################################################
+#
+# mybatis mapper 配置
+#
+############################################################
+# 通用 Mapper 配置
+mapper:
+  mappers: com.zz.my.mapper.MyMapper
+  not-empty: false
+  identity: MYSQL
+
+
+## 开启所有actuator-endpoint
+management:
+  endpoint:
+    health:
+      show-details: always
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  #        include: health, info, xxxx
+  security:
+    enabled: false
+
+hystrix:
+  command:
+    # 有的属性是默认值，写不写都行
+    default:
+      fallback:
+        enabled: true
+      circuitBreaker:
+        enabled: true
+        # 超过50%错误，那么开启熔断
+        errorThresholdPercentage: 50
+        # 5个request之后才进行统计
+        requestVolumeThreshold: 5
+        # 10秒之后进入半开状态
+        sleepWindowInMilliseconds: 10000
+        # forceClosed, forceOpen 强制关闭/开启熔断开关
+      execution:
+        timeout:
+          enabled: true
+        # 可以指定隔离方式是线程池还是信号量
+        isolation:
+          thread:
+            interruptOnTimeout: true
+            interruptOnFutureCancel: true
+            timeoutInMilliseconds: 10000
+      metrics:
+        rollingStats:
+          # 时间窗口统计
+          timeInMilliseconds: 20000

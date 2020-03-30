@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zz.item.mapper.ItemsMapper">
+  <resultMap id="BaseResultMap" type="com.zz.item.pojo.Items">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="item_name" jdbcType="VARCHAR" property="itemName" />
+    <result column="cat_id" jdbcType="INTEGER" property="catId" />
+    <result column="on_off_status" jdbcType="INTEGER" property="onOffStatus" />
+    <result column="created_time" jdbcType="TIMESTAMP" property="createdTime" />
+    <result column="updated_time" jdbcType="TIMESTAMP" property="updatedTime" />
+    <result column="video_id" jdbcType="VARCHAR" property="videoId" />
+    <result column="content" jdbcType="LONGVARCHAR" property="content" />
+    <result column="item_img" jdbcType="LONGVARCHAR" property="itemImg" />
+    <result column="vr_img" jdbcType="VARCHAR" property="vrImg" />
+    <result column="item_type" jdbcType="INTEGER" property="itemType" />
+    <result column="kaipanshijian" jdbcType="VARCHAR" property="kaipanshijian" />
+    <result column="jiaofangshijian" jdbcType="VARCHAR" property="jiaofangshijian" />
+    <result column="zhengtigaikuang" jdbcType="LONGVARCHAR" property="zhengtigaikuang" />
+    <result column="apt_img" jdbcType="VARCHAR" property="aptImg" />
+    <result column="dianjicishu" jdbcType="INTEGER" property="dianjicishu" />
+
+  </resultMap>
+
+  <update id="updateItems">
+    update items
+    <set>
+      <if test="itemName != null">
+        item_name = #{itemName,jdbcType=VARCHAR},
+      </if>
+      <if test="catId != null">
+        cat_id = #{catId,jdbcType=INTEGER},
+      </if>
+      <if test="onOffStatus != null">
+        on_off_status = #{onOffStatus,jdbcType=INTEGER},
+      </if>
+      <if test="createdTime != null">
+        created_time = #{createdTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updatedTime != null">
+        updated_time = #{updatedTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="videoId != null">
+        video_id = #{videoId,jdbcType=VARCHAR},
+      </if>
+      <if test="content != null">
+        content = #{content,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="itemImg != null">
+        item_img = #{itemImg,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="vrImg != null">
+        vr_img = #{vrImg,jdbcType=VARCHAR},
+      </if>
+      <if test="itemType != null">
+        item_type = #{itemType,jdbcType=INTEGER},
+      </if>
+      <if test="kaipanshijian != null">
+        kaipanshijian = #{kaipanshijian,jdbcType=VARCHAR},
+      </if>
+      <if test="jiaofangshijian != null">
+        jiaofangshijian = #{jiaofangshijian,jdbcType=VARCHAR},
+      </if>
+      <if test="zhengtigaikuang != null">
+        zhengtigaikuang = #{zhengtigaikuang,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="aptImg != null">
+        apt_img = #{aptImg,jdbcType=VARCHAR},
+      </if>
+
+      dianjicishu = dianjicishu + 1
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+    and dianjicishu = #{dianjicishu,jdbcType=INTEGER}
+
+  </update>
+</mapper>

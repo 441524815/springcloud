@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zz.item.mapper.ItemsParamMapper">
+  <resultMap id="BaseResultMap" type="com.zz.item.pojo.ItemsParam">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="id" jdbcType="VARCHAR" property="id" />
+    <result column="item_id" jdbcType="VARCHAR" property="itemId" />
+    <result column="tedian" jdbcType="VARCHAR" property="tedian" />
+    <result column="address" jdbcType="VARCHAR" property="address" />
+    <result column="price" jdbcType="VARCHAR" property="price" />
+    <result column="chaoxiang" jdbcType="VARCHAR" property="chaoxiang" />
+    <result column="louceng" jdbcType="VARCHAR" property="louceng" />
+    <result column="dianti" jdbcType="INTEGER" property="dianti" />
+    <result column="niandai" jdbcType="VARCHAR" property="niandai" />
+    <result column="zhuangxiu" jdbcType="VARCHAR" property="zhuangxiu" />
+    <result column="area" jdbcType="VARCHAR" property="area" />
+    <result column="sheshi" jdbcType="VARCHAR" property="sheshi" />
+    <result column="detail" jdbcType="VARCHAR" property="detail" />
+    <result column="created_time" jdbcType="TIMESTAMP" property="createdTime" />
+    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+
+    <result column="leixing" jdbcType="VARCHAR" property="leixing" />
+    <result column="mianji" jdbcType="VARCHAR" property="mianji" />
+    <result column="fangxing" jdbcType="VARCHAR" property="fangxing" />
+    <result column="qita" jdbcType="VARCHAR" property="qita" />
+    <result column="hexinmaidian" jdbcType="VARCHAR" property="hexinmaidian" />
+    <result column="zhuangxiumiaoshu" jdbcType="VARCHAR" property="zhuangxiumiaoshu" />
+    <result column="tudijuxinxi" jdbcType="VARCHAR" property="tudijuxinxi" />
+    <result column="zuyuehetong" jdbcType="VARCHAR" property="zuyuehetong" />
+    <result column="huxingjieshao" jdbcType="VARCHAR" property="huxingjieshao" />
+    <result column="xiangmujieshao" jdbcType="VARCHAR" property="xiangmujieshao" />
+    <result column="jiaotong" jdbcType="VARCHAR" property="jiaotong" />
+    <result column="jiaoyu" jdbcType="VARCHAR" property="jiaoyu" />
+    <result column="yiliao" jdbcType="VARCHAR" property="yiliao" />
+    <result column="shangye" jdbcType="VARCHAR" property="shangye" />
+    <result column="dongtai" jdbcType="VARCHAR" property="dongtai" />
+    <result column="huxing1" jdbcType="VARCHAR" property="huxing1" />
+    <result column="huxing2" jdbcType="VARCHAR" property="huxing2" />
+    <result column="huxing3" jdbcType="VARCHAR" property="huxing3" />
+    <result column="huxing4" jdbcType="VARCHAR" property="huxing4" />
+    <result column="zuyue" jdbcType="VARCHAR" property="zuyue" />
+  </resultMap>
+</mapper>

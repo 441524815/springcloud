@@ -1,0 +1,43 @@
+############################################################
+#
+# Eureka注册中心
+#
+############################################################
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:20000/eureka/
+  instance:
+    hostname: localhost
+    prefer-ip-address: true
+logging:
+  level:
+    io:
+      seata: info
+ribbon:
+  ReadTimeout: 30000
+  ConnectTimeout: 30000
+  eureka:
+    enabled: true
+spring:
+  cloud:
+    config:
+      name: item-service
+      discovery:
+        enabled: true
+        service-id: config-server
+      profile: dev
+      # 默认
+      label: master
+
+## 开启所有actuator-endpoint
+#management:
+#  endpoint:
+#    health:
+#      show-details: always
+#  endpoints:
+#    web:
+#      exposure:
+#        include: '*'
+#  security:
+#    enabled: false

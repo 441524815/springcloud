@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <option name="USE_RELEASE_OPTION" value="false" />
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="config-server" />
+        <module name="spring-cloud-commom" />
+        <module name="spring-cloud-item-api" />
+        <module name="spring-cloud-item-mapper" />
+        <module name="spring-cloud-item-pojo" />
+        <module name="spring-cloud-item-service" />
+        <module name="spring-cloud-item-web" />
+        <module name="spring-cloud-like-api" />
+        <module name="spring-cloud-like-mapper" />
+        <module name="spring-cloud-like-pojo" />
+        <module name="spring-cloud-like-service" />
+        <module name="spring-cloud-like-web" />
+        <module name="spring-cloud-registry-center" />
+        <module name="spring-cloud-shared-pojo" />
+        <module name="spring-cloud-web-components" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel target="8" />
+  </component>
+</project>

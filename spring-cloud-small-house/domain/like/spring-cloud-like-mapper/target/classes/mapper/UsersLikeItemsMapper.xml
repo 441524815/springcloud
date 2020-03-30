@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zz.like.mapper.UsersLikeItemsMapper">
+  <resultMap id="BaseResultMap" type="com.zz.like.pojo.UsersLikeItems">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="id" jdbcType="INTEGER" property="id" />
+      <result column="items_id" jdbcType="INTEGER" property="itemsId" />
+      <result column="open_id" jdbcType="VARCHAR" property="openId" />
+      <result column="phone" jdbcType="VARCHAR" property="phone" />
+      <result column="cishu" jdbcType="INTEGER" property="cishu" />
+  </resultMap>
+
+
+
+    <update id="updateLike">
+        update users_like_items
+        <set>
+            <if test="itemsId != null">
+                items_id = #{itemsId,jdbcType=INTEGER},
+            </if>
+            <if test="openId != null">
+                open_id = #{openId,jdbcType=VARCHAR},
+            </if>
+            <if test="phone != null">
+                phone = #{phone,jdbcType=VARCHAR},
+            </if>
+            <if test="cishu != null">
+                cishu = #{cishu,jdbcType=INTEGER},
+            </if>
+            cishu = cishu + 1
+        </set>
+        where id = #{id,jdbcType=INTEGER}
+        and cishu = #{cishu,jdbcType=INTEGER}
+
+    </update>
+
+    <select id="queryUsersLikeItemsAll" parameterType="Map" resultType="com.zz.like.pojo.UsersLikeItems">
+      select c.id id ,c.items_id itemsId,c.open_id openId,c.phone phone,c.cishu cishu
+      from  users_like_items c
+      WHERE
+      c.items_id = #{paramsMap.itemsId}
+      and c.open_id = #{paramsMap.openId}
+  </select>
+</mapper>

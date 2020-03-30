@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding" native2AsciiForPropertiesFiles="true" defaultCharsetForPropertiesFiles="UTF-8" addBOMForNewFiles="with NO BOM">
+    <file url="file://$PROJECT_DIR$" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/commom/spring-cloud-commom" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/commom/spring-cloud-shared-pojo" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/commom/spring-cloud-web-components" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/domain/item/spring-cloud-item-api" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/domain/item/spring-cloud-item-mapper" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/domain/item/spring-cloud-item-pojo" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/domain/item/spring-cloud-item-service" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/domain/item/spring-cloud-item-web" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/domain/like/spring-cloud-like-api" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/domain/like/spring-cloud-like-mapper" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/domain/like/spring-cloud-like-pojo" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/domain/like/spring-cloud-like-service" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/domain/like/spring-cloud-like-web" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/platform/config-server" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/platform/spring-cloud-registry-center" charset="UTF-8" />
+    <file url="PROJECT" charset="UTF-8" />
+  </component>
+</project>
